@@ -15,25 +15,6 @@ import {
 const auth = getAuth();
 const database = getDatabase();
 
-const publishFunc = () => {
-  //   alert("clicked");
-  let uniqueId = auth.currentUser.uid;
-  console.log(uniqueId);
-  let userReference = ref(database, "users/" + uniqueId);
-  const blogInfo = {
-    blogTitle: blogTitleInput.value,
-    blogDescription: blogDescriptionInput.value,
-  };
-  push(userReference, blogInfo)
-    .then((resolve) => {
-      alert("blog has added");
-    })
-    .catch((error) => {
-      console.error("Error adding blog:", error);
-      alert("Error in adding blog. Check the console for details.");
-    });
-};
-
 let blogTitleInput = document.querySelector(".blogTitleInput");
 let blogDescriptionInput = document.querySelector(".blogDescriptionInput");
 let publishBlogBtn = document.querySelector(".publishBlogBtn");
@@ -41,20 +22,69 @@ let writeBlog = document.querySelector(".writeBlog");
 let textAreaBorder = document.querySelector(".textAreaBorder");
 let moreOptionsDiv = document.querySelector(".moreOptionsDiv");
 let fa_caret_up = document.querySelector(".fa-caret-up"); //arrow down
-let fa_calender = document.querySelectorAll(".fa-calendar");
-let fa_clock = document.querySelectorAll(".fa-clock");
-let addingDAte = document.querySelectorAll(".addingDAte");
-let addingTime = document.querySelectorAll(".addingTime");
+// let addingDAte = document.querySelector(".addingDAte");
+// let addingTime = document.querySelector(".addingTime");
+let timeStampOfBlog = new Date().getTime();
 
-for (let i = 0; i < fa_calender.length; i++) {
-  addingDAte[i].innerText = `${new Date().getDate()}-${
-    new Date().getMonth() + 1
-  }-${new Date().getFullYear()}`;
+// ==display variables
+let showPersonalBlogs = document.querySelector(".showPersonalBlogs");
+//=========================publish function================
+const publishFunc = () => {
+  //   alert("clicked");
+  let uniqueId = auth.currentUser.uid;
+  // console.log(uniqueId);
+  let parentUserReference = ref(database, "users/" + uniqueId);
+  let blogReference = ref(database, "users/" + "userBlogs/" + uniqueId);
+  let infoReference = ref(database, "users/" + "userInfo" + uniqueId);
+  // console.log(checkUidRef);
+  // console.log(userReference);
+  const blogInfo = {
+    blogTitle: blogTitleInput.value,
+    blogDescription: blogDescriptionInput.value,
+    timeStampOfBlog,
+    publishDAte: `${new Date().getDate()}-${
+      new Date().getMonth() + 1
+    }-${new Date().getFullYear()}`,
+    publishTime: `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`,
+    uniqueId,
+  };
+  push(blogReference, blogInfo)
+    .then((resolve) => {
+      alert("blog has added");
+      onValue(blogReference, (snapshot) => {
+        let data = snapshot.val();
+        snapshot.forEach((childSnapshot) => {
+          let childUid = childSnapshot.val().uniqueId;
+          console.log("childuid", childUid);
 
-  addingTime[
-    i
-  ].innerText = `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`;
-}
+          if (childUid === uniqueId) {
+            let blogsDiv = document.createElement("div");
+            let titleDiv = document.createElement("h3");
+            let iconsOnPersonalBlog = document.createElement("div");
+            titleDiv.innerText = childSnapshot.val().blogTitle;
+            iconsOnPersonalBlog.appendChild("blogsDiv");
+            blogsDiv.appendChild("titleDiv");
+            // addingDAte.innerText = childSnapshot.val().publishDAte;
+            // addingTime.innerText = childSnapshot.val().publishTime;
+          }
+        });
+      });
+    })
+    .catch((error) => {
+      console.error("Error adding blog:", error);
+      alert("Error in adding blog. Check the console for details.");
+    });
+};
+
+// for (let i = 0; i < fa_calender.length; i++) {
+//   addingDAte[i].innerText = `${new Date().getDate()}-${
+//     new Date().getMonth() + 1
+//   }-${new Date().getFullYear()}`;
+
+//   addingTime[
+//     i
+//   ].innerText = `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`;
+// }
 // ===publishBlogBtn===
 publishBlogBtn.addEventListener("click", () => {
   setTimeout(() => {
@@ -62,10 +92,10 @@ publishBlogBtn.addEventListener("click", () => {
     textAreaBorder.style.display = "none";
     writeBlog.style.display = "block";
   }, 10);
-  setTimeout(() => {
-    blogTitleInput.value = "";
-    blogDescriptionInput.value = "";
-  }, 1000);
+  // setTimeout(() => {
+  //   blogTitleInput.value = "";
+  //   blogDescriptionInput.value = "";
+  // }, 1000);
 });
 
 // ====create new blog====

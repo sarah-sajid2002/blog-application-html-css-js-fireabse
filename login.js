@@ -22,12 +22,14 @@ const logInFunc = () => {
     .then((resolve) => {
       alert("login successfully", resolve);
       let uniqueId = auth.currentUser.uid;
-      let userReference = ref(database, "users/" + uniqueId);
+      let userReference = ref(database, "users/" + "/userinfo/" + uniqueId);
       onValue(userReference, (snapshot) => {
-        // let output = document.querySelector(".output");
-        // output.innerHTML = snapshot.val().firstName;
-        alert(snapshot.val().firstName);
-        alert(snapshot.val().imageUrl);
+        snapshot.forEach((childSnapshot) => {
+          console.log(childSnapshot);
+          console.log(childSnapshot.val().firstName);
+          console.log(childSnapshot.val().imageUrl);
+          i++;
+        });
       });
     })
     .catch((error) => {

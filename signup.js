@@ -40,7 +40,10 @@ const signUpFunc = () => {
           console.log("successfully added image in storage", response.ref);
           getDownloadURL(response.ref).then((url) => {
             let uniqueId = auth.currentUser.uid;
-            let userReference = ref(database, "users/" + uniqueId);
+            let userReference = ref(
+              database,
+              "users/" + "userInfo/" + uniqueId
+            );
             let userObj = {
               firstName: userName.value,
               lastName: userLastName,
@@ -49,6 +52,8 @@ const signUpFunc = () => {
               imageUrl: url,
               signUpDate: `${date}-${month}-${year}`,
               signUpTime: `${hours}:${minutes}:${seconds}`,
+              timeStamp: signUpTimeStamp,
+              uniqueId,
             };
             set(userReference, userObj)
               .then((response) => {
@@ -103,6 +108,6 @@ let year = new Date().getFullYear();
 let hours = new Date().getHours();
 let minutes = new Date().getMinutes();
 let seconds = new Date().getSeconds();
-
+let signUpTimeStamp = new Date().getTime();
 signup.addEventListener("click", signUpFunc);
 export { date, month, year, hours, minutes, seconds };

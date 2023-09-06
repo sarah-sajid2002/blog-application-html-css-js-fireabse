@@ -34,23 +34,33 @@ header {
   width: 50%;
   display: flex;
   justify-content: end;
+  align-items: center;
   cursor: pointer;
 }
 .fa-user {
   margin: 0px 10px;
 }
 .fa-caret-down {
-  margin-left: 50px;
+  margin-right: 20px;
 }
 .fa-caret-up {
-  margin-left: 50px;
+  margin-right: 20px;
+}
+.right img {
+  width: 40px;
+  height: 40px;
+  margin: 0px 10px;
+  border-radius: 50%;
+}
+.displayUserName {
+  margin: 0px 10px;
 }
 /* ==================================moreOptionsDiv============= */
 .moreOptionsDiv {
   position: absolute;
   background-color: rgb(234, 230, 250);
   top: 60px;
-  right: 10px;
+  right: 190px;
   width: 150px;
   height: 80px;
   align-items: center;

@@ -21,15 +21,17 @@ const logInFunc = () => {
   )
     .then((resolve) => {
       alert("login successfully", resolve);
+
       let uniqueId = auth.currentUser.uid;
-      let userReference = ref(database, "users/" + "/userinfo/" + uniqueId);
+      let userReference = ref(database, "users/" + "userInfo/" + uniqueId);
       onValue(userReference, (snapshot) => {
-        snapshot.forEach((childSnapshot) => {
-          console.log(childSnapshot);
-          console.log(childSnapshot.val().firstName);
-          console.log(childSnapshot.val().imageUrl);
-          i++;
-        });
+        console.log(snapshot.val().firstName);
+
+        // snapshot.forEach((childSnapshot) => {
+        //   var childKey = childSnapshot.key[0];
+        //   var childData = childSnapshot.val()[0];
+        //   console.log(`${childKey} : ${childData}`);
+        // });
       });
     })
     .catch((error) => {

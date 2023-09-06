@@ -31,7 +31,7 @@ const signUpFunc = () => {
   )
     .then((resolve) => {
       alert("signup successfully");
-      userNAmeInSTorage = localStorage.setItem("userName", userName.value);
+      let userNAmeInSTorage = localStorage.setItem("userName", userName.value);
       const imageFile = userFileInput.files[0];
       let mediaRef = storageRef(storage, "images/" + imageFile.name);
       uploadBytes(mediaRef, imageFile)
@@ -40,13 +40,14 @@ const signUpFunc = () => {
           console.log("successfully added image in storage", response.ref);
           getDownloadURL(response.ref).then((url) => {
             let uniqueId = auth.currentUser.uid;
+            let userUidInStorage = localStorage.setItem("uid", uniqueId);
             let userReference = ref(
               database,
               "users/" + "userInfo/" + uniqueId
             );
             let userObj = {
               firstName: userName.value,
-              lastName: userLastName,
+              lastName: userLastName.value,
               email: userEmail.value,
               password: userPassword.value,
               imageUrl: url,

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+      <link rel="shortcut icon" href="./assets/login.png" type="image/x-icon">
+    <link rel="stylesheet" href="./login-signup.css" />
+    <title>login page | Blog Application</title>
+  </head>
+  <body>
+    <form class="login" action="">
+      <div class="imageWorkLogin"></div>
+      <div class="logInWork">
+        <h1>login</h1>
+        <input type="email" class="userEmailLogin" placeholder="enter email" />
+        <input
+          type="password"
+          minlength="8"
+          maxlength="15"
+          class="userPasswordLogin"
+          placeholder="enter password"
+        />
+        <button type="button" class="logInButton">Login</button>
+        <h4>don't have an account??</h4>
+        <button type="button" class="signUpButtonChange">
+          <a href="./signup.html">create account</a>
+        </button>
+      </div>
+    </form>
+    <div class="loadingLogin">
+      <img src="./assets/loading gif.gif" alt="" />
+    </div>
+    <script type="module" src="./config.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="./login.js"></script>
+  </body>
+</html>

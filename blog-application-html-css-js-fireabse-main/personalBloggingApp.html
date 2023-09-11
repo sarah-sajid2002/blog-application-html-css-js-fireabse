@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="personalBloggingApp.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <title>personal blogging app</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <h1>personal blogging app</h1>
+      </div>
+      <div class="right">
+        <i class="fas fa-caret-up"></i>
+        <h3 class="displayUserName"></h3>
+      </div>
+    </header>
+    <div class="moreOptionsDiv">
+      <h4 class="logout">logout</h4>
+      <h4 class="homePage">home page</h4>
+    </div>
+    <div class="dashBoard">
+      <h1>dashboard</h1>
+      <div class="writeBlog">
+        <button>
+          create blog
+          <img src="./assets/pencil.png" />
+        </button>
+      </div>
+    </div>
+    <form action="">
+      <div class="textAreaBorder">
+        <div class="textArea">
+          <input
+            class="blogTitleInput"
+            type="text"
+            placeholder="enter blog title "
+            minlength="5"
+            maxlength="50"
+          />
+          <p class="parentUniqueId"></p>
+          <p class="childUniqueId"></p>
+          <textarea
+            class="blogDescriptionInput"
+            cols="50"
+            rows="7"
+            placeholder="DESCRIPTION..."
+            minlength="100"
+            maxlength="3000"
+          ></textarea>
+          <button class="publishBlogBtn">publish blog</button>
+        </div>
+      </div>
+    </form>
+    <div class="showPersonalBlogs"></div>
+    <div class="editBlogDiv">
+      <div class="editMainDiv">
+        <h1>edit your blog</h1>
+        <h1>change title</h1>
+        <input
+          minlength="10"
+          maxlength="50"
+          type="text"
+          class="tileEdit"
+          placeholder="new title"
+        />
+        <h1>change description</h1>
+        <textarea
+          class="descriptionEdit"
+          cols="30"
+          rows="10"
+          placeholder="new description"
+        ></textarea>
+        <input type="text" class="keepTrack" readonly />
+        <button class="doneEditing">done</button>
+        <button class="cancelEditing">cancel</button>
+      </div>
+    </div>
+    <div class="loading">
+      <img src="./assets/loading gif.gif" alt="" />
+    </div>
+    <div class="deleteCoverDiv">
+      <div class="deleteConfirmationBox">
+        <p>do you want to delete the blog permanently?</p>
+        <button class="yesDelete">yes</button>
+        <button class="dontDelete">no</button>
+        <input type="text" class="keepKey" readonly />
+      </div>
+    </div>
+
+    <script type="module" src="./config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script type="module" src="./abc.js"></script> -->
+    <script type="module" src="./personalBlogPage.js"></script>
+    <!-- <script type="module" src="./personalBloggingApp.js"></script> -->
+  </body>
+</html>
+
+<!-- um atque vero voluptatibus perferendis! Asperiores velit beatae voluptate eum odit accusantium nostrum commodi. Veniam explicabo voluptatibus non!
+In, inventore cum totam necessitatibus fugiat corrupti dolore nostrum aspernatur reiciendis saepe cupiditate! Doloribus deleniti voluptates, itaque iusto, est repudiandae totam soluta, nesciunt magni suscipit consequatur nam in ut eum?
+Dolorum error, nihil unde voluptates culpa minus minima obcaecati quidem sapiente eos modi mollitia ab quos tempore veritatis in cumque eius quo dignissimos? Minus voluptas odit laboriosam soluta velit. Maiores!
+Ullam fuga nulla voluptatibus non id asperiores rei -->

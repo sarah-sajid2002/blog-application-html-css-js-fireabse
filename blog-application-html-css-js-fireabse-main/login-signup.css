@@ -1,0 +1,196 @@
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #d1e8f8;
+}
+
+
+.output {
+  display: block;
+}
+
+.signup {
+  width: 70%;
+  height: 85%;
+  border-radius: 30px;
+  margin-top: 30px;
+  text-align: center;
+  border: 2px solid rgba(123, 116, 116, 0.396);
+  background-color: #a9d2ee;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+.signup_wok{
+  width: 50%;
+  height: 100%;
+}
+.imageWork{
+  background-image: url(./assets/signup\ page\ image.jpeg);
+  height: 100%;
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+}
+.imageWorkLogin{
+   background-image: url(./assets/login\ image.png);
+  height: 100%;
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+}
+.login {
+   width: 70%;
+  height: 85%;
+  border-radius: 30px;
+  margin-top: 30px;
+  text-align: center;
+  border: 2px solid rgba(123, 116, 116, 0.396);
+  background-color: #a9d2ee;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+.logInChange a,
+.signUpButtonChange a {
+  color: black;
+  text-decoration: none;
+}
+h1 {
+  text-align: center;
+  margin: 10px;
+  text-transform: uppercase;
+}
+h4 {
+  text-align: center;
+  text-transform: uppercase;
+}
+input {
+  width: 90%;
+  margin: 10px 0px;
+  border-radius: 5px;
+  height: 30px;
+  font-size: 14px;
+  padding: 5px;
+}
+button {
+  width: 90%;
+  height: 40px;
+  border-radius: 20px;
+  border: 2px solid rgba(123, 116, 116, 0.396);
+  background-color: rgba(0, 11, 105, 0.63);
+  box-shadow: rgb(68, 78, 221) 0px 14px 29px;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 10px 0px;
+}
+button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 584px 559px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  cursor: pointer;
+  background-color: rgb(169, 210, 248);
+}
+
+/* Style the container when hovering over it */
+.custom-file-input:hover {
+  background-color: #2980b9;
+}
+/* loading */
+.loading,.loadingLogin {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(182, 231, 243, 0.523);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.loading img ,.loadingLogin img{
+  width: 20%;
+  height: 30%;
+  position: relative;
+  left: 60px;
+  top: 0px;
+}
+/* media quey */
+
+/* @media (max-width: 1000px) {
+  .signup_wok,
+  .logInWork {
+    width: 50%;
+    height: 100%;
+  }
+} */
+@media (max-width: 950px) {
+  .signup{
+    flex-direction: column;
+    height: 100vh;
+    width: 80%;
+  }
+  .login{
+    flex-direction: column;
+    height: 60vh;
+     width: 80%;
+  }
+  .imageWork,.imageWorkLogin{
+    width: 100%;
+    height: 30%;
+  }
+  .signup_wok,.logInWork{
+    width: 100%;
+    height: 70%;
+  }
+  h1 {
+    margin: 20px;
+  }
+  input {
+    font-size: 18px;
+    width: 90%;
+  }
+  button {
+    font-size: 14px;
+  }
+  h4 {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 380px) {
+  .signup {
+    width: 98%;
+    height: 100%;
+  }
+  .login{
+    height: 60%;
+  }
+  .imageWorkLogin,.imageWork{
+    height: 20%;
+  }
+  .signup_wok,.logInWork{
+    height: 80%;
+  }
+}

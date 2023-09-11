@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Roboto+Slab:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+  font-family: "Roboto Slab", serif;
+}
+body {
+  background-color: rgb(240, 235, 228);
+}
+/* ================================header====================== */
+header {
+  background-color: rgba(88, 88, 224, 0.849);
+  color: white;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  position: fixed;
+  top: 0px;
+  z-index: 1000;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left {
+  text-transform: uppercase;
+  padding: 0px 20px;
+  width: 50%;
+}
+.right {
+  padding: 10px 60px;
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  cursor: pointer;
+}
+/* Add this CSS code to style the buttons and add animations */
+.right button {
+  width: 100px;
+  height: 40px;
+  background-color: #ffffff;
+  margin: 0px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect - change background and text color */
+.right button:hover {
+  background-color: #333; /* Change to your desired hover background color */
+  color: #ffffff; /* Change to your desired hover text color */
+  transform: scale(1.05); /* Add a slight scale-up effect on hover */
+}
+
+/* Add more specific styles if needed for individual buttons */
+.right .logIn {
+  background-color: #fcf7e6; /* Customize the login button color */
+}
+
+.right .signUp {
+  background-color: #3498db; /* Customize the signup button color */
+}
+
+/* =================================showAllBlogs============================= */
+.showAllBlogs {
+  width: 100%;
+  margin: 6% auto;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 100vh;
+}
+.allBlogs {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  background-color: rgb(154, 201, 243);
+  padding: 5px 0px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  position: sticky;
+  top: 80px;
+}
+.blogsDiv {
+  width: 45%;
+  margin: 30px auto;
+  background-color: rgb(151, 151, 241);
+  padding: 10px;
+  border-radius: 5px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 400px;
+}
+.blogsDiv button {
+  background-color: beige;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  padding: 2px;
+}
+.iconsOnPersonalBlog {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+}
+.fas {
+  color: rgb(13, 8, 82);
+  font-size: 18px;
+  margin: 0px 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.titleDiv {
+  background-color: #c9e5f8;
+  border-radius: 20px;
+  margin: auto;
+  width: 90%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(57, 56, 56);
+  text-align: left;
+  margin: 0px 10px;
+  overflow-x: hidden;
+}
+.descriptionDiv {
+  font-size: 18px;
+  width: 90%;
+  height: 350px;
+  overflow-y: scroll;
+  padding: 10px;
+  margin: 10px 0px;
+  background-color: rgb(163, 193, 220);
+  border-radius: 10px;
+  white-space: wrap;
+}
+
+/* scroll */
+::-webkit-scrollbar {
+  background-color: #c7c6f6;
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: 2px 2px #4343e4;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #aa97f5;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4343e4;
+}
+/* change color */
+.changeColor {
+  background-color: transparent;
+  border: none;
+  color: transparent;
+}
+
+/* ===============loading=============== */
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(189, 232, 242, 0.523);
+  top: 0px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.loading img {
+  width: 10%;
+  height: 20%;
+}
+/* published by */
+.name {
+  font-size: 18px;
+}
+.image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.publishDiv {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  background-color: #3498db;
+  justify-content: space-evenly;
+  padding: 5px;
+  border-radius: 10px;
+}
+/* ================================header====================== */
+@media (max-width: 1000px) {
+  .left {
+    padding: 0px 10px;
+    font-size: 10px;
+  }
+  .allBlogs {
+    margin-top: 90px;
+  }
+  .right {
+    padding: 0px 0px;
+    font-size: 14px;
+  }
+  .fa-user {
+    margin: 0px 5px;
+  }
+  .fa-caret-down {
+    margin-right: 10px;
+  }
+  .fa-caret-up {
+    margin-right: 10px;
+  }
+  .right img {
+    width: 40px;
+    height: 40px;
+    margin: 0px 10px;
+    border-radius: 50%;
+  }
+  .displayUserName {
+    margin: 0px 10px;
+  }
+}
+@media (max-width: 900px) {
+  .blogsDiv {
+    width: 98%;
+    height: 350px;
+  }
+  .titleDiv {
+    width: 100%;
+    height: 180px;
+    padding: 0px 5px;
+    margin: 0px 0px;
+    border-radius: 0px;
+  }
+  .publishDiv {
+    height: 50px;
+    width: 90%;
+
+    border-radius: 0px;
+  }
+  .descriptionDiv {
+    width: 100%;
+  }
+  .iconsOnPersonalBlog {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .fas {
+    margin: 0px 2px;
+    font-size: 10px;
+  }
+}
+/* //media query */
+@media (max-width: 500px) {
+  header {
+    height: 100px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+  }
+  .left {
+    width: 100%;
+    padding: 5px 10px;
+  }
+  .right {
+    width: 100%;
+    padding: 5px 10px;
+    justify-content: start;
+  }
+  .dashBoard {
+    padding: 50px 10px;
+    margin-top: 80px;
+  }
+
+  .writeBlog button {
+    width: 150px;
+    height: 60px;
+    font-size: 14px;
+    padding: 5px;
+  }
+  .writeBlog img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 300px) {
+  .writeBlog button {
+    width: 100px;
+    height: 30px;
+    font-size: 10px;
+    padding: 5px;
+  }
+  .dashBoard h1 {
+    font-size: 14px;
+  }
+}

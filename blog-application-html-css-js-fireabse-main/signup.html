@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./login-signup.css" />
+    <link rel="shortcut icon" href="./assets/login.png" type="image/x-icon" />
+    <title>signup page</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+  </head>
+  <body>
+    <form class="signup" action="">
+      <div class="imageWork"></div>
+      <div class="signup_wok">
+        <h1>signup</h1>
+
+        <input
+          type="text"
+          class="userName"
+          placeholder="enter first name"
+          minlength="3"
+          maxlength="20"
+        />
+
+        <input
+          type="text"
+          class="userLastName"
+          placeholder="enter last name"
+          minlength="1"
+          maxlength="20"
+        />
+        <input type="email" class="userEmail" placeholder="enter email" />
+        <input
+          type="password"
+          minlength="8"
+          maxlength="15"
+          class="userPassword"
+          placeholder="enter password"
+          minlength="8"
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$"
+        />
+
+        <input
+          type="password"
+          class="repeatPassword"
+          placeholder="repeat password"
+        />
+
+        <input class="userFileInput" type="file" />
+
+        <button type="button" class="signUpButton">signup</button>
+        <h4>already have an account??</h4>
+        <button type="button" class="logInChange">
+          <a href="./login.html">login</a>
+        </button>
+      </div>
+    </form>
+    <div class="loading">
+      <img src="./assets/loading gif.gif" alt="" />
+    </div>
+    <script type="module" src="./config.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="./signup.js"></script>
+  </body>
+</html>

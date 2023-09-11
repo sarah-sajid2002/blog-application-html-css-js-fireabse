@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="profile.css" />
+    <title>profile page</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+  </head>
+  <body>
+    <h1>your profile</h1>
+    <div class="mainDiv">
+      <div class="left">
+        <div class="divImg"><img class="userImage" src="" alt="" /></div>
+        <div class="nameDiv">
+            <p class="FirstNameDiv"></p>
+        <p class="lastNameDiv"></p>
+        </div>
+        
+        <button class="signOut">sign out</button>
+        <button class="deleteAccountBtn">deactivate account</button>
+      </div>
+      <div class="right">
+        <h2>info section</h2>
+         <i class="fas fa-edit">edit</i>
+        <h3>email: <span class="emailArea"></span></h3>
+        <h3>password: <span class="passwordArea">.......</span></h3>
+        <h3>created account on: <span class="accCreationDate"></span></h3>
+        <button class="dashboard">dashboard</button>
+        <button class="homePage">home page</button>
+      </div>
+    </div>
+    <div class="updateDiv">
+      <p>change first name</p>
+      <input
+        minlength="3"
+        maxlength="15"
+        type="text"
+        class="changeFirstName"
+        placeholder="new name"
+      />
+      <p>change last name</p>
+      <input
+        minlength="3"
+        maxlength="15"
+        type="text"
+        class="changeLastName"
+        placeholder="new name"
+      />
+      <p>old password</p>
+      <input
+        minlength="8"
+        maxlength="15"
+        type="text"
+        class="oldPassword"
+        placeholder="old password"
+      />
+       <p>change profile photo</p>
+      <input
+        type="file"
+        class="changeProfileImage"
+      />
+      <div class="buttons">
+        <button class="confirm">confirm</button>
+        <button class="cancel">cancel</button>
+      </div>
+    </div>
+<div class="loading">
+      <img src="./assets/loading gif.gif" alt="" />
+    </div>
+    <script type="module" src="./config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    ;
+    <script type="module" src="./profile.js"></script>
+  </body>
+</html>

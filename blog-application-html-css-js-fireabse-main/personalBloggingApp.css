@@ -1,0 +1,503 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Roboto+Slab:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+  font-family: "Roboto Slab", serif;
+}
+body {
+  background-color: rgb(240, 235, 228);
+}
+/* ================================header====================== */
+header {
+  background-color: rgba(88, 88, 224, 0.849);
+  color: white;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  position: fixed;
+  top: 0px;
+  z-index: 1000;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left {
+  text-transform: uppercase;
+  padding: 0px 20px;
+  width: 50%;
+}
+.right {
+  padding: 10px 60px;
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  cursor: pointer;
+}
+.fa-user {
+  margin: 0px 10px;
+}
+.fa-caret-down {
+  margin-right: 20px;
+}
+.fa-caret-up {
+  margin-right: 20px;
+}
+.right img {
+  width: 40px;
+  height: 40px;
+  margin: 0px 10px;
+  border-radius: 50%;
+}
+.displayUserName {
+  margin: 0px 10px;
+}
+/* ==================================moreOptionsDiv============= */
+.moreOptionsDiv {
+  position: absolute;
+  background-color: rgb(234, 230, 250);
+  top: 60px;
+  right: 190px;
+  width: 150px;
+  height: 80px;
+  align-items: center;
+  z-index: 2000;
+  border-radius: 10px;
+  display: none;
+}
+.moreOptionsDiv h4 {
+  margin-left: 30px;
+  margin-top: 10px;
+}
+.moreOptionsDiv h4:hover {
+  cursor: pointer;
+  color: rgb(141, 116, 230);
+}
+/* ==================================dashBoard=================== */
+.dashBoard {
+  width: 100%;
+  height: 100px;
+  padding: 50px 30px;
+  margin-top: 70px;
+  background-color: aliceblue;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.dashBoard h1 {
+  text-transform: uppercase;
+}
+/* ==============================writeBlog============================= */
+
+.writeBlog button {
+  width: 200px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(185, 185, 252);
+  font-size: 20px;
+  text-transform: capitalize;
+  padding: 10px;
+  cursor: pointer;
+}
+.writeBlog img {
+  width: 50px;
+  height: 50px;
+}
+/* ==========================textArea================== */
+.textAreaBorder {
+  width: 70%;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  background-color: aliceblue;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  display: none;
+}
+.textArea {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 300px;
+}
+
+.blogTitleInput {
+  width: 100%;
+  border-radius: 2px;
+  height: 40px;
+  padding: 10px;
+  font-size: 20px;
+}
+.blogDescriptionInput {
+  width: 100%;
+  border-radius: 2px;
+  font-size: 20px;
+  padding: 10px;
+}
+.publishBlogBtn {
+  width: 150px;
+  height: 40px;
+  background-color: blue;
+  color: aliceblue;
+  font-size: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+/* ==============================showPersonalBlogs=========================== */
+.myBlogs {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(154, 201, 243);
+  padding: 5px 0px;
+}
+.showPersonalBlogs {
+  width: 100%;
+  margin: 50px auto;
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: calc(100%-100px);
+}
+
+.blogsDiv {
+  width: 45%;
+  margin: 30px auto;
+  background-color: rgb(151, 151, 241);
+  padding: 10px;
+  border-radius: 5px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.blogsDiv button {
+  background-color: beige;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  padding: 2px;
+}
+.iconsOnPersonalBlog {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+}
+.fas {
+  color: rgb(13, 8, 82);
+  font-size: 18px;
+  margin: 0px 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.titleDiv {
+  margin: auto;
+  width: 90%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(57, 56, 56);
+  text-align: left;
+  margin: 0px 10px;
+  overflow-x: hidden;
+}
+.descriptionDiv {
+  font-size: 18px;
+  width: 90%;
+  height: 200px;
+  overflow-y: scroll;
+  padding: 10px;
+  margin: 10px 0px;
+  background-color: rgb(163, 193, 220);
+  border-radius: 10px;
+  white-space: wrap;
+}
+.fa-trash {
+  color: rgb(97, 8, 8);
+}
+.fa-pencil {
+  color: blue;
+}
+/* scroll */
+::-webkit-scrollbar {
+  background-color: #c7c6f6;
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: 2px 2px #4343e4;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #aa97f5;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4343e4;
+}
+/* change color */
+.changeColor {
+  background-color: transparent;
+  border: none;
+  color: transparent;
+}
+
+/* loading */
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(189, 232, 242, 0.523);
+  top: 0px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.loading img {
+  width: 10%;
+  height: 20%;
+}
+
+/* ======================editBlogDiv================= */
+.editBlogDiv {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #bfb8e057;
+
+}
+.editMainDiv {
+  width: 70%;
+  height: 80%;
+  background-color: rgb(225, 230, 247);
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  top: 10%;
+  left: 15%;
+    border: 6px solid blue;
+}
+
+.editMainDiv h1:nth-child(1) {
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: underline;
+}
+.editMainDiv h1 {
+  margin: 0px 0px;
+  font-size: 20px;
+}
+.editMainDiv input {
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgb(163, 193, 220);
+  font-size: 18px;
+  padding: 10px;
+}
+
+.tileEdit {
+  height: 40px;
+}
+.descriptionEdit {
+  font-size: 18px;
+  width: 100%;
+  height: 200px;
+  overflow-y: scroll;
+  padding: 10px;
+  margin: 10px 0px;
+  background-color: rgb(163, 193, 220);
+  border-radius: 10px;
+  white-space: wrap;
+  text-align: start;
+}
+.editMainDiv button {
+  width: 150px;
+  height: 50px;
+  background-color: #4343e4;
+  text-transform: uppercase;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 10px 0px;
+}
+.keeptrack {
+  background-color: #bfb8e057;
+  border: none;
+  color: transparent;
+}
+/* =deleteConfirmationBox */
+.deleteCoverDiv{
+  width:50%;
+  height:70vh;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+    background-color: #baacf0;
+  position:absolute;
+  top: 100px;
+  left: 300px;
+  border-radius: 30px;
+  border: 4px solid rgb(83, 8, 116);
+}
+.deleteConfirmationBox {
+  width: 80%;
+  height: 70%;
+  position: absolute;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  top: 50px;
+}
+.deleteConfirmationBox p {
+  font-size: 20px;
+  font-weight: bold;
+}
+.yesDelete {
+  width: 50%;
+  height: 60px;
+  font-size: 25px;
+  background-color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.dontDelete {
+  width: 80%;
+  height: 60px;
+  font-size: 20px;
+  background-color: rgb(255, 150, 136);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.keepKey {
+  width: 50%;
+  background-color: transparent;
+  border: none;
+  display: none;
+}
+/* media query*/
+
+/* ================================header====================== */
+@media (max-width: 1000px) {
+  .left {
+    padding: 0px 10px;
+    font-size: 10px;
+  }
+  .right {
+    padding: 0px 0px;
+    font-size: 14px;
+  }
+  .fa-user {
+    margin: 0px 5px;
+  }
+  .fa-caret-down {
+    margin-right: 10px;
+  }
+  .fa-caret-up {
+    margin-right: 10px;
+  }
+  .right img {
+    width: 40px;
+    height: 40px;
+    margin: 0px 10px;
+    border-radius: 50%;
+  }
+  .displayUserName {
+    margin: 0px 10px;
+  }
+}
+@media (max-width: 900px) {
+  .blogsDiv {
+    width: 98%;
+    height: 350px;
+  }
+  .titleDiv {
+    width: 100%;
+    height: 50px;
+    margin: 0px 0px;
+  }
+  .descriptionDiv{
+    width:100%;
+  }
+  .iconsOnPersonalBlog {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.fas {
+  margin: 0px 2px;
+  font-size: 10px;
+}
+}
+@media (max-width: 500px) {
+  header {
+    height: 100px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+  }
+  .left {
+    width: 100%;
+    padding: 5px 10px;
+  }
+  .right {
+    width: 100%;
+    padding: 5px 10px;
+    justify-content: start;
+  }
+  .dashBoard {
+    padding: 50px 10px;
+    margin-top: 80px;
+  }
+
+  .writeBlog button {
+    width: 150px;
+    height: 60px;
+    font-size: 14px;
+    padding: 5px;
+  }
+  .writeBlog img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 300px) {
+  .writeBlog button {
+    width: 100px;
+    height: 30px;
+    font-size: 10px;
+    padding: 5px;
+  }
+  .dashBoard h1 {
+    font-size: 14px;
+  }
+}
